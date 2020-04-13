@@ -127,3 +127,7 @@ body > section {
 	}
 
 }
+
+.hide {
+    display: none;
+}
