@@ -1,0 +1,17 @@
+{
+  "name": "selenium_node",
+  "version": "1.0.0",
+  "description": "Proof of concept testing writing selenium tests in javascript and executed with the Jasmine framework",
+  "main": "pageTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Hedrick",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
+}

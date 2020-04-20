@@ -22,8 +22,6 @@ class pageTest(unittest.TestCase):
       dropDown = webdriver.support.select.Select(self.browser.find_element_by_class_name('div-toggle'))
       self.assertEqual(dropDown.first_selected_option.text, 'Orange')
       self.assertNotEqual(dropDown.first_selected_option.text, 'Apple')
-      #self.assertTrue(self.browser.find_element_by_class_name('orange').is_displayed())
-      #self.assertFalse(self.browser.find_element_by_class_name('lemon').is_displayed())
 
    
    def testDropDown(self):
