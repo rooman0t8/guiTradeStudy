@@ -1,11 +1,12 @@
-const {Builder, By, Key, until} = require('selenium-webdriver');
+const {Builder, By, until} = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 
 describe("Unit tests for notCodi", function(){
-   beforeEach(async function(){
+   beforeEach(function(){
       options = new firefox.Options();
       options.headless();
-      this.browser = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
+      //this.browser = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
+      return this.browser = new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
    });
 
    afterEach(async function(){
