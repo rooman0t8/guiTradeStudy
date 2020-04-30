@@ -1,5 +1,21 @@
+Team Notes
+================================================================================
+For this peer review you can examine the code and evaluationMatrix or
+install the reqired dependecies and execute the tests.
+
+The following test suites are checked against the testHtml webpage which I hosted
+locally on my machine using,
+'python -m SimpleHTTPServer'
+
+The HTML and test suites are very basic, but because of the load delay in the
+testHTML java script it does required testing the wait conditions of the
+various tools.  The dropdown button is also one of the more niche interface
+elements and provided a good exercise of the available selector syntax.
+
+
 VM Setup
 ================================================================================
+CentOS 7
 installed:
    scl git 2.9
    vscode
@@ -125,15 +141,18 @@ Because of the display waits my tests are too imbalenced to tell the exact
 concurrency implementation.
 
 
-Trade Study Info
+Trade Study Evaluation
 ================================================================================
 I need to way to quantify and rank Selenium/Python, Selenium/Jest, and TestCafe
 
 Scale 1-5
 Weighted                                      
 
-functionality
-framework reuse
-future proof
-ease of use
+Categories:
+   functionality
+   framework reuse
+   future proof
+   ease of use
+
+See evaluationMatrix.xlsx
 
