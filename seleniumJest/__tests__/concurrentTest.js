@@ -9,7 +9,6 @@ beforeEach(async () => {
    this.browser = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
    //expect(this.browser).toBeInstanceOf(ThenableWebDriver());
 
-   //expect(this.browser.get("http://localhost:8000")).resolves.toBeNull();
    expect(await this.browser.get("http://localhost:8000")).toBeNull();
 });
 

@@ -7,9 +7,9 @@ beforeEach(async () => {
    options = new firefox.Options();
    options.headless();
    this.browser = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
+   // Didn't get this check to work correctly
    //expect(this.browser).toBeInstanceOf(ThenableWebDriver());
 
-   //expect(this.browser.get("http://localhost:8000")).resolves.toBeNull();
    expect(await this.browser.get("http://localhost:8000")).toBeNull();
 });
 
@@ -30,6 +30,7 @@ test('body text', async () => {
 })
 
 test('dropdown', async () => {
+   // Nothing is displayed when the page first loads.
    expect(await this.browser.findElement(By.className('orange')).isDisplayed()).toBe(false);
    expect(await this.browser.findElement(By.className('apple')).isDisplayed()).toBe(false);
 

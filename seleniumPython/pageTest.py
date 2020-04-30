@@ -28,12 +28,18 @@ class pageTest(unittest.TestCase):
       self.browser.get('http://localhost:8000')
       self.assertIn('Test HTML', self.browser.title)
 
+      # Nothing displays when the page is first loaded.
       self.assertFalse(self.browser.find_element_by_class_name('orange').is_displayed())
       self.assertFalse(self.browser.find_element_by_class_name('apple').is_displayed())
+
+      # Wait until serbet is visible
       webdriver.support.ui.WebDriverWait(self.browser, timeout=2).until(lambda b: b.find_element_by_class_name('orange').is_displayed())
       dropDown = webdriver.support.select.Select(self.browser.find_element_by_class_name('div-toggle'))
+
+      # "click" and wait
       dropDown.select_by_value('apple')
       webdriver.support.ui.WebDriverWait(self.browser, timeout=2).until(lambda b: b.find_element_by_class_name('apple').is_displayed())
+
       self.assertEqual(dropDown.first_selected_option.text, 'Apple')
       self.assertTrue(self.browser.find_element_by_class_name('apple').is_displayed())
       self.assertFalse(self.browser.find_element_by_class_name('orange').is_displayed())

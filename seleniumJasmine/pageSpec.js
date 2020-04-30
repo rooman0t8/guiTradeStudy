@@ -5,7 +5,7 @@ describe("Unit tests for notCodi", function(){
    beforeEach(function(){
       options = new firefox.Options();
       options.headless();
-      //this.browser = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
+      // Jasmine will wait for the promise to resolve when it is returned
       return this.browser = new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
    });
 
@@ -30,6 +30,7 @@ describe("Unit tests for notCodi", function(){
       await this.browser.get("http://localhost:8000")
       expect(await this.browser.getTitle()).toEqual('Test HTML')
 
+      // Nothing displays when the page is first loaded.
       expect(await this.browser.findElement(By.className('orange')).isDisplayed()).toBeFalse();
       expect(await this.browser.findElement(By.className('apple')).isDisplayed()).toBeFalse();
 

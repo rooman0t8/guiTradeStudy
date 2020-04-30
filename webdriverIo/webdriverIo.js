@@ -18,7 +18,6 @@ it('body text', async () => {
    //expect(this.browser.findElement(By.id('logo')).getText()).resolves.isEqual('HTML5 Layout')
 
    dropDown = await $('.div-toggle')
-   // Note variation in syntax
    expect(await dropDown.getAttribute('value')).isEqual('orange')
    expect(await dropDown.getAttribute('value')).not.isEqual('apple')
 })
